@@ -88,7 +88,7 @@ export default function App() {
 
     // noinspection DuplicatedCode
     return (
-        <Container maxWidth='lg'>
+        <Container>
             <Grid container direction='column' spacing={4}> {/* Whole page wrapper */}
                 <Grid item container direction='row' justify='space-between' alignItems='center'>
                     <Grid item>
@@ -208,16 +208,16 @@ export default function App() {
                     />
                 </Grid>
                 <Grid item container spacing={4} justify='center'>
-                    <Grid item lg={3}>
+                    <Grid item lg={3} md={4}>
                         <CourseCard type='presentment' recipeImage={card1} title={pageTest1.course1}/>
                     </Grid>
-                    <Grid item lg={3}>
+                    <Grid item lg={3} md={4}>
                         <CourseCard type='online' recipeImage={card2} title={pageTest1.course2}/>
                     </Grid>
-                    <Grid item lg={3}>
+                    <Grid item lg={3} md={4}>
                         <CourseCard type='online' recipeImage={card3} title={pageTest1.course1}/>
                     </Grid>
-                    <Grid item lg={3}>
+                    <Grid item lg={3} md={4}>
                         <CourseCard type='online' recipeImage={card1} title={pageTest1.course1}/>
                     </Grid>
                 </Grid>

@@ -19,6 +19,11 @@ function Index() {
                 root: {
                     minWidth: "unset"
                 }
+            },
+            MuiRating: {
+                root: {
+                    textAlign: undefined
+                }
             }
         }
     });
