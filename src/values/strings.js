@@ -20,12 +20,20 @@ export const strings = {
         license: 'با اعطای مدرک معتبر',
         price1: '11,000 تومان',
         signUp: 'ثبت نام',
+        login: 'ورود',
         recommendedCourses: `دوره${zwnj}های پیشنهادی حضوری و آنلاین`,
-        online: 'آنلاین',
+        online: 'فست فود',
         presentment: 'حضوری',
         priceUnit: 'تومان',
         course1: 'آموزش آنلاین پخت پیتزا',
-        course2: 'آموزش حضوری پخت پیتزا'
+        course2: 'آموزش حضوری پخت پیتزا',
+        mainPage: 'صفحه اصلی',
+        learningCourses: `دوره${zwnj}های آموزشی`,
+        learningClips: `فیلم${zwnj}های آموزشی`,
+        contactUs: 'ارتباط با ما',
+        aboutUs: 'درباره ما',
+        signInUp: 'ورود/ثبت نام',
     }
 };
 
+export const appName = 'آشپز شو، قناد شو';

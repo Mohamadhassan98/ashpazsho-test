@@ -48,6 +48,9 @@ export const genericStyles = makeStyles(() => ({
     genericAutoWidth: {
         width: 'auto'
     },
+    centerAlignItems: {
+        alignItems: 'center'
+    }
 }));
 
 
@@ -143,6 +146,38 @@ export function useBorderRadius(borderRadius) {
     return useStyles().useBorderRadius;
 }
 
+// noinspection DuplicatedCode
+export function useBorderRadiuses(topLeft = undefined, topRight = undefined, bottomLeft = undefined, bottomRight = undefined) {
+    const [mdTopLeft, lgTopLeft, xlTopLeft] = useWidths(topLeft);
+    const [mdBottomLeft, lgBottomLeft, xlBottomLeft] = useWidths(bottomLeft);
+    const [mdTopRight, lgTopRight, xlTopRight] = useWidths(topRight);
+    const [mdBottomRight, lgBottomRight, xlBottomRight] = useWidths(bottomRight);
+    const useStyles = makeStyles(theme => ({
+        useBorderRadius: {
+            [theme.breakpoints.up('md')]: {
+                borderBottomLeftRadius: mdBottomLeft,
+                borderBottomRightRadius: mdBottomRight,
+                borderTopLeftRadius: mdTopLeft,
+                borderTopRightRadius: mdTopRight
+            },
+            [theme.breakpoints.up('lg')]: {
+                borderBottomLeftRadius: lgBottomLeft,
+                borderBottomRightRadius: lgBottomRight,
+                borderTopLeftRadius: lgTopLeft,
+                borderTopRightRadius: lgTopRight
+            },
+            [theme.breakpoints.up('xl')]: {
+                borderBottomLeftRadius: xlBottomLeft,
+                borderBottomRightRadius: xlBottomRight,
+                borderTopLeftRadius: xlTopLeft,
+                borderTopRightRadius: xlTopRight
+            },
+        }
+    }));
+    return useStyles().useBorderRadius;
+}
+
+// noinspection DuplicatedCode
 export function usePadding(top = undefined, bottom = undefined, left = undefined, right = undefined) {
     const [mdTop, lgTop, xlTop] = useWidths(top);
     const [mdBottom, lgBottom, xlBottom] = useWidths(bottom);
@@ -171,4 +206,35 @@ export function usePadding(top = undefined, bottom = undefined, left = undefined
         }
     }));
     return useStyles().usePadding;
+}
+
+// noinspection DuplicatedCode
+export function useMargin(top = undefined, bottom = undefined, left = undefined, right = undefined) {
+    const [mdTop, lgTop, xlTop] = useWidths(top);
+    const [mdBottom, lgBottom, xlBottom] = useWidths(bottom);
+    const [mdLeft, lgLeft, xlLeft] = useWidths(left);
+    const [mdRight, lgRight, xlRight] = useWidths(right);
+    const useStyles = makeStyles(theme => ({
+        useMargin: {
+            [theme.breakpoints.up('md')]: {
+                MarginTop: mdTop,
+                marginBottom: mdBottom,
+                marginLeft: mdLeft,
+                marginRight: mdRight
+            },
+            [theme.breakpoints.up('lg')]: {
+                marginTop: lgTop,
+                marginBottom: lgBottom,
+                marginLeft: lgLeft,
+                marginRight: lgRight
+            },
+            [theme.breakpoints.up('xl')]: {
+                marginTop: xlTop,
+                marginBottom: xlBottom,
+                marginLeft: xlLeft,
+                marginRight: xlRight
+            },
+        }
+    }));
+    return useStyles().useMargin;
 }

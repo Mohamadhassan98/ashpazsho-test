@@ -26,6 +26,8 @@ const useStyles = makeStyles(theme => ({
     },
     divider: {
         background: 'rgba(141, 141, 141, 0.16)',
+        marginLeft: 12,
+        marginRight: 12
     },
     secondRow: {
         padding: 6,
