@@ -7,7 +7,7 @@ import {strings} from "./values/strings";
 import {TextField} from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import searchIcon from './assets/magnifying-glass.png';
-import {genericStyles, useBorderRadius, useFont, useMinWidth, useSize, useWidth} from "./values/responsive";
+import {genericStyles, useBorderRadius, useFont, useMargin, useMinWidth, useSize, useWidth} from "./values/responsive";
 import Hidden from "@material-ui/core/Hidden";
 import Divider from "@material-ui/core/Divider";
 import clsx from "clsx";
@@ -20,8 +20,7 @@ import card2 from './assets/Recipe2.png';
 import card3 from './assets/Recipe3.png';
 import CourseDetailsCard from "./CourseDetailsCard";
 import CourseCard from "./CourseCard";
-import MobileDrawer from "./Drawer";
-import MobileHeader from "./MobileHeader";
+import Header from "./headers/Header";
 
 const useStyles = makeStyles(theme => ({
     backgroundMainColor: {
@@ -85,15 +84,13 @@ export default function App() {
     const classes = useStyles();
     const genericClasses = genericStyles();
     const textFieldClasses = textFieldStyle();
-    const [drawerOpen, setDrawerOpen] = React.useState(false);
 
     const {pageTest1} = strings;
 
     // noinspection DuplicatedCode
     return (
-        <div>
-            <MobileHeader drawerButtonCallback={() => setDrawerOpen(true)}/>
-            <MobileDrawer open={drawerOpen} setOpen={setDrawerOpen}/>
+        <div className={genericClasses.genericFullWidth}>
+            <Header/>
             <Container className={genericClasses.genericAutoWidth}>
                 <Grid container direction='column' spacing={4}> {/* Whole page wrapper */}
                     <Grid item container direction='row' justify='space-between' alignItems='center'>
@@ -121,13 +118,13 @@ export default function App() {
                             </Grid>
                         </Hidden>
                     </Grid>
-                    <Grid item>
+                    <Grid item container>
                         <Typography className={useFont(22, undefined, true)}>
                             {pageTest1.loremIpsum}
                         </Typography>
                     </Grid>
-                    <Grid item container alignItems='center' wrap='nowrap' spacing={3}>
-                        <Grid item>
+                    <Grid item container alignItems='center' wrap='nowrap'>
+                        <Grid item className={useMargin(0, 0, 0, 24)}>
                             <Typography
                                 className={clsx([useFont(28, 'medium'), classes.fontMainColor])} noWrap>
                                 {pageTest1.aboutCourse}
@@ -136,7 +133,6 @@ export default function App() {
                         <Grid item className={genericClasses.genericFullWidth}>
                             <Divider
                                 className={clsx([classes.divider, classes.backgroundMainColor])}
-                                flexItem
                                 variant='fullWidth'
                             />
                         </Grid>
@@ -222,7 +218,7 @@ export default function App() {
                             className={clsx([classes.recommendedCoursesChip, useSize(503, 94), useBorderRadius(47), useFont(30, 'medium')])}
                         />
                     </Grid>
-                    <Grid item container spacing={4} justify='center'>
+                    <Grid item container justify='center'>
                         <Grid item lg={3} md={4}>
                             <CourseCard type='presentment' recipeImage={card1} title={pageTest1.course1}/>
                         </Grid>

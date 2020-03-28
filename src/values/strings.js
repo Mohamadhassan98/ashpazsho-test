@@ -22,7 +22,7 @@ export const strings = {
         signUp: 'ثبت نام',
         login: 'ورود',
         recommendedCourses: `دوره${zwnj}های پیشنهادی حضوری و آنلاین`,
-        online: 'فست فود',
+        online: 'آنلاین',
         presentment: 'حضوری',
         priceUnit: 'تومان',
         course1: 'آموزش آنلاین پخت پیتزا',
@@ -33,6 +33,10 @@ export const strings = {
         contactUs: 'ارتباط با ما',
         aboutUs: 'درباره ما',
         signInUp: 'ورود/ثبت نام',
+        packages: `پکیج${zwnj}ها`,
+        foodCategories: `دسته${zwnj}بندی غذایی`,
+        recommendationsAndOffers: `پیشنهادها و تخفیف${zwnj}ها`,
+        exit: 'خروج'
     }
 };
 

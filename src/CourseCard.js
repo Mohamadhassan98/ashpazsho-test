@@ -10,7 +10,7 @@ import Typography from "@material-ui/core/Typography";
 import Chip from "@material-ui/core/Chip";
 import Divider from "@material-ui/core/Divider";
 import clock from './assets/clock.png';
-import {genericStyles, useBorderRadius, useFont, useMinWidth, useSize} from "./values/responsive";
+import {genericStyles, useBorderRadius, useFont, useMargin, useMinWidth, useSize} from "./values/responsive";
 import clsx from "clsx";
 import SignUpButton from "./SignUpButton";
 
@@ -48,7 +48,7 @@ export default function CourseCard(props) {
     const {pageTest1} = strings;
 
     return (
-        <Card className={clsx([classes.card, useBorderRadius(20)])}>
+        <Card className={clsx([classes.card, useBorderRadius(20), useMargin(0, 0, 24, 24)])}>
             <CardMedia
                 className={clsx([useSize(undefined, 267), useBorderRadius(20), useMinWidth(384)])}
                 image={recipeImage}

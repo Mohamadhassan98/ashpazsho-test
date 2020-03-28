@@ -2,12 +2,12 @@ import React from "react";
 import {Container, Paper, Typography} from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import {makeStyles} from '@material-ui/core/styles';
-import pic2 from './assets/logo.png';
+import pic2 from '../assets/logo.png';
 import Grid from "@material-ui/core/Grid";
-import {genericStyles, useBorderRadius, useBorderRadiuses, useFont, useMargin, useSize} from "./values/responsive";
+import {genericStyles, useBorderRadius, useBorderRadiuses, useFont, useMargin, useSize} from "../values/responsive";
 import clsx from "clsx";
-import {strings} from "./values/strings";
-import downArrow from "./assets/down arrow.png";
+import {strings} from "../values/strings";
+import downArrow from "../assets/down arrow.png";
 
 const useStyle = makeStyles(theme => ({
     root: {
@@ -25,7 +25,7 @@ const useStyle = makeStyles(theme => ({
         height: '100%',
     }
 }));
-export default function Header(props) {
+export default function WebHeader(props) {
     const classes = useStyle();
     const genericClasses = genericStyles();
     const {pageTest1} = strings;
@@ -35,7 +35,8 @@ export default function Header(props) {
             className={clsx([useMargin(0, 73), genericClasses.genericFullWidth, genericClasses.inlineFlex, genericClasses.centerAlignItems, useSize(undefined, 169), useBorderRadiuses('0', '0', 50, 50), classes.root])}
         >
             <Container>
-                <Grid container wrap='nowrap' alignItems='center' justify='space-between'> {/* whole Header wrapper */}
+                <Grid container wrap='nowrap' alignItems='center'
+                      justify='space-between'> {/* whole WebHeader wrapper */}
                     <Grid item className={genericClasses.inlineFlex}>
                         <img src={pic2} className={useSize(145, 51)} alt='logo'/>
                     </Grid>
