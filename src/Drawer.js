@@ -4,29 +4,24 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import Container from "@material-ui/core/Container";
 import logo from './assets/logo.png';
-import {useFont, usePadding, useSize} from "./values/mobileResponsive";
+import {useFont, usePadding, useSize} from "./values/mobile";
 import Typography from "@material-ui/core/Typography";
-import {appName, strings} from "./values/strings";
+import {appName, colors, genericStyles, strings} from "./values/values";
 import Divider from "@material-ui/core/Divider";
 import PropTypes from 'prop-types';
 import Grid from "@material-ui/core/Grid";
-import {genericStyles} from "./values/responsive";
 import {ExpandLess, ExpandMore} from "@material-ui/icons";
 import Collapse from "@material-ui/core/Collapse";
 import clsx from "clsx";
 import {makeStyles} from "@material-ui/styles";
 
-const useStyles = makeStyles(theme => ({
-    nestedListItem: {
-        background: '#EEEEEE'
-    }
-}));
+const colorStyles = makeStyles(theme => colors);
 
 export default function MobileDrawer(props) {
     const {open, setOpen} = props;
     const {pageTest1} = strings;
     const genericClasses = genericStyles();
-    const classes = useStyles();
+    const colorClasses = colorStyles();
     const [coursesOpen, setCoursesOpen] = React.useState(false);
     const [clipsOpen, setClipsOpen] = React.useState(false);
     return (
@@ -71,14 +66,14 @@ export default function MobileDrawer(props) {
                 }}>
                     <List component="div" disablePadding>
                         <ListItem button
-                                  className={clsx([classes.nestedListItem, genericClasses.flexEndJustifyContent, usePadding(0, 0, 19)])}>
+                                  className={clsx([colorClasses.backgroundGrayColor, genericClasses.flexEndJustifyContent, usePadding(0, 0, 19)])}>
                             <Typography className={useFont(14)}>
                                 {pageTest1.presentment}
                             </Typography>
                         </ListItem>
                         <Divider/>
                         <ListItem button
-                                  className={clsx([classes.nestedListItem, genericClasses.flexEndJustifyContent, usePadding(0, 0, 19)])}>
+                                  className={clsx([colorClasses.backgroundGrayColor, genericClasses.flexEndJustifyContent, usePadding(0, 0, 19)])}>
                             <Typography className={useFont(14)}>
                                 {pageTest1.online}
                             </Typography>
@@ -100,7 +95,7 @@ export default function MobileDrawer(props) {
                     <List component="div" disablePadding>
                         <ListItem
                             button
-                            className={clsx([classes.nestedListItem, genericClasses.flexEndJustifyContent, usePadding(0, 0, 19)])}
+                            className={clsx([colorClasses.backgroundGrayColor, genericClasses.flexEndJustifyContent, usePadding(0, 0, 19)])}
                         >
                             <Typography className={useFont(14)}>
                                 {pageTest1.presentment}
@@ -108,7 +103,7 @@ export default function MobileDrawer(props) {
                         </ListItem>
                         <Divider/>
                         <ListItem button
-                                  className={clsx([classes.nestedListItem, genericClasses.flexEndJustifyContent, usePadding(0, 0, 19)])}>
+                                  className={clsx([colorClasses.backgroundGrayColor, genericClasses.flexEndJustifyContent, usePadding(0, 0, 19)])}>
                             <Typography className={useFont(14)}>
                                 {pageTest1.online}
                             </Typography>

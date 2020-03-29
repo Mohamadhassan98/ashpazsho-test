@@ -1,11 +1,11 @@
 import React from "react";
 import {makeStyles} from "@material-ui/styles";
 import clsx from "clsx";
-import {genericStyles} from "../values/responsive";
+import {genericStyles} from "../values/values";
 import {Container, Paper} from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
-import {useBorderRadius, useSize} from "../values/mobileResponsive";
+import {useBorderRadius, useSize} from "../values/mobile";
 import MenuIcon from '@material-ui/icons/Menu';
 import logo from '../assets/logo.png';
 import user from '../assets/user.png';
@@ -28,7 +28,7 @@ export default function MobileHeader(props) {
                 <Grid container justify='space-between' alignItems='center'>
                     <Grid item className={genericClasses.inlineFlex}>
                         <Button variant='text' onClick={props.drawerButtonCallback}>
-                            <MenuIcon className={clsx([useSize(24, 24)])}/>
+                            <MenuIcon className={useSize(24, 24)}/>
                         </Button>
                     </Grid>
                     <Grid item>

@@ -4,26 +4,17 @@ import Grid from "@material-ui/core/Grid";
 import {Paper} from "@material-ui/core";
 import Divider from "@material-ui/core/Divider";
 import Typography from "@material-ui/core/Typography";
-import {strings} from './values/strings';
+import {colors, genericStyles, strings} from './values/values';
 import Rating from '@material-ui/lab/Rating';
 import chef from './assets/chef.png';
 import calendar from './assets/calendar.png';
 import license from './assets/license.png';
 import teacher from './assets/Teacher.png';
 import clsx from "clsx";
-import {genericStyles, useBorderRadius, useFont, usePadding, useSize, useWidth} from "./values/responsive";
+import {useBorderRadius, useFont, usePadding, useSize, useWidth} from "./values/web";
 import SignUpButton from "./SignUpButton";
 
 const useStyles = makeStyles(theme => ({
-    backgroundMainColor: {
-        background: '#FF364A'
-    },
-    fontMainColor: {
-        color: '#FF364A'
-    },
-    fontGreenColor: {
-        color: '#03B40F'
-    },
     divider: {
         background: 'rgba(141, 141, 141, 0.16)',
         marginLeft: 12,
@@ -60,9 +51,12 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
+const colorStyles = makeStyles(theme => colors);
+
 export default function () {
     const classes = useStyles();
     const genericClasses = genericStyles();
+    const colorClasses = colorStyles();
     const {pageTest1} = strings;
 
     return (
@@ -162,7 +156,7 @@ export default function () {
                         </Grid>
                         <Grid item>
                             <Typography
-                                className={clsx([classes.fontGreenColor, useFont(35, 'bold')])}
+                                className={clsx([colorClasses.fontGreenColor, useFont(35, 'bold')])}
                                 noWrap
                             >
                                 {pageTest1.price1}

@@ -15,46 +15,7 @@ export function useWidths(size, baseRatio = 'xl') {
     return [useWidth(size, 'xl', baseRatio), useWidth(size, 'lg', baseRatio), useWidth(size, 'md', baseRatio), useWidth(size, 'sm', baseRatio), useWidth(size, 'xs', baseRatio)];
 }
 
-export const genericStyles = makeStyles(() => ({
-    genericFullWidth: {
-        width: '100%'
-    },
-    ltr: {
-        flip: false,
-        textAlign: 'left',
-        direction: 'ltr',
-    },
-    backgroundMainColor: {
-        background: '#FF364A'
-    },
-    fontMainColor: {
-        color: '#FF364A'
-    },
-    inlineFlex: {
-        display: 'inline-flex'
-    },
-    fontGreenColor: {
-        color: '#03B40F'
-    },
-    fontWhiteColor: {
-        color: '#FFFFFF'
-    },
-    backgroundGreenColor: {
-        background: '#03B40F'
-    },
-    centerJustifyContent: {
-        justifyContent: 'center'
-    },
-    genericAutoWidth: {
-        width: 'auto'
-    },
-    centerAlignItems: {
-        alignItems: 'center'
-    },
-    flexEndJustifyContent: {
-        justifyContent: 'flex-end'
-    }
-}));
+
 
 
 export function useFont(size, weight = undefined, justify = false) {
@@ -77,9 +38,7 @@ export function useFont(size, weight = undefined, justify = false) {
         useFont: {
             textAlign: justify ? 'justify' : undefined,
             fontWeight: fontWeight,
-            // [theme.breakpoints.up('md')]: {
-                fontSize: md,
-            // },
+            fontSize: md,
             [theme.breakpoints.up('lg')]: {
                 fontSize: lg,
             },
@@ -96,10 +55,8 @@ export function useSize(width = undefined, height = undefined) {
     const [Hxl, Hlg, Hmd] = useWidths(height);
     const useStyles = makeStyles(theme => ({
         useSize: {
-            [theme.breakpoints.up('md')]: {
-                width: Wmd,
-                height: Hmd,
-            },
+            width: Wmd,
+            height: Hmd,
             [theme.breakpoints.up('lg')]: {
                 width: Wlg,
                 height: Hlg,
@@ -117,9 +74,7 @@ export function useMinWidth(minWidth = undefined) {
     const [Wxl, Wlg, Wmd] = useWidths(minWidth);
     const useStyles = makeStyles(theme => ({
         useSize: {
-            [theme.breakpoints.up('md')]: {
-                minWidth: Wmd,
-            },
+            minWidth: Wmd,
             [theme.breakpoints.up('lg')]: {
                 minWidth: Wlg,
             },
@@ -135,14 +90,12 @@ export function useBorderRadius(borderRadius) {
     const [xlBR, lgBR, mdBR] = useWidths(borderRadius);
     const useStyles = makeStyles(theme => ({
         useBorderRadius: {
-            [theme.breakpoints.up('md')]: {
-                borderRadius: mdBR
-            },
+            borderRadius: mdBR,
             [theme.breakpoints.up('lg')]: {
-                borderRadius: lgBR
+                borderRadius: lgBR,
             },
             [theme.breakpoints.up('xl')]: {
-                borderRadius: xlBR
+                borderRadius: xlBR,
             },
         }
     }));
@@ -157,12 +110,10 @@ export function useBorderRadiuses(topLeft = undefined, topRight = undefined, bot
     const [xlBottomRight, lgBottomRight, mdBottomRight] = useWidths(bottomRight);
     const useStyles = makeStyles(theme => ({
         useBorderRadius: {
-            [theme.breakpoints.up('md')]: {
-                borderBottomLeftRadius: mdBottomLeft,
-                borderBottomRightRadius: mdBottomRight,
-                borderTopLeftRadius: mdTopLeft,
-                borderTopRightRadius: mdTopRight
-            },
+            borderBottomLeftRadius: mdBottomLeft,
+            borderBottomRightRadius: mdBottomRight,
+            borderTopLeftRadius: mdTopLeft,
+            borderTopRightRadius: mdTopRight,
             [theme.breakpoints.up('lg')]: {
                 borderBottomLeftRadius: lgBottomLeft,
                 borderBottomRightRadius: lgBottomRight,
@@ -188,12 +139,10 @@ export function usePadding(top = undefined, bottom = undefined, left = undefined
     const [xlRight, lgRight, mdRight] = useWidths(right);
     const useStyles = makeStyles(theme => ({
         usePadding: {
-            [theme.breakpoints.up('md')]: {
-                paddingTop: mdTop,
-                paddingBottom: mdBottom,
-                paddingLeft: mdLeft,
-                paddingRight: mdRight
-            },
+            paddingTop: mdTop,
+            paddingBottom: mdBottom,
+            paddingLeft: mdLeft,
+            paddingRight: mdRight,
             [theme.breakpoints.up('lg')]: {
                 paddingTop: lgTop,
                 paddingBottom: lgBottom,
@@ -213,30 +162,16 @@ export function usePadding(top = undefined, bottom = undefined, left = undefined
 
 // noinspection DuplicatedCode
 export function useMargin(top = undefined, bottom = undefined, left = undefined, right = undefined) {
-    const [xlTop, lgTop, mdTop, smTop, xsTop] = useWidths(top);
-    const [xlBottom, lgBottom, mdBottom, smBottom, xsBottom] = useWidths(bottom);
-    const [xlLeft, lgLeft, mdLeft, smLeft, xsLeft] = useWidths(left);
-    const [xlRight, lgRight, mdRight, smRight, xsRight] = useWidths(right);
+    const [xlTop, lgTop, mdTop] = useWidths(top);
+    const [xlBottom, lgBottom, mdBottom] = useWidths(bottom);
+    const [xlLeft, lgLeft, mdLeft] = useWidths(left);
+    const [xlRight, lgRight, mdRight] = useWidths(right);
     const useStyles = makeStyles(theme => ({
         useMargin: {
-            [theme.breakpoints.up('xs')]: {
-                MarginTop: xsTop,
-                marginBottom: xsBottom,
-                marginLeft: xsLeft,
-                marginRight: xsRight
-            },
-            [theme.breakpoints.up('sm')]: {
-                MarginTop: smTop,
-                marginBottom: smBottom,
-                marginLeft: smLeft,
-                marginRight: smRight
-            },
-            [theme.breakpoints.up('md')]: {
-                MarginTop: mdTop,
-                marginBottom: mdBottom,
-                marginLeft: mdLeft,
-                marginRight: mdRight
-            },
+            marginTop: mdTop,
+            marginBottom: mdBottom,
+            marginLeft: mdLeft,
+            marginRight: mdRight,
             [theme.breakpoints.up('lg')]: {
                 marginTop: lgTop,
                 marginBottom: lgBottom,

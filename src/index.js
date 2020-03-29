@@ -6,6 +6,8 @@ import * as serviceWorker from './serviceWorker';
 import {createMuiTheme, CssBaseline} from "@material-ui/core";
 import {ThemeProvider} from "@material-ui/styles";
 import RTL from "./RTL";
+import {strings} from "./values/values";
+import HiddenScroll from "./hiddenScroll";
 
 function Index() {
     const theme = createMuiTheme({
@@ -37,11 +39,16 @@ function Index() {
         }
     });
 
+    const {pageTest1} = strings;
+
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline>
                 <RTL>
-                    <App/>
+                    {/*<FoodCard background={food1} foodCategory={pageTest1.foodCategory1} foodTitle={pageTest1.recipe1}/>*/}
+                    <HiddenScroll vertical horizontal>
+                        <App/>
+                    </HiddenScroll>
                 </RTL>
             </CssBaseline>
         </ThemeProvider>

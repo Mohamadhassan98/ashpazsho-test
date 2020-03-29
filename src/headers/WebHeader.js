@@ -4,9 +4,9 @@ import Button from "@material-ui/core/Button";
 import {makeStyles} from '@material-ui/core/styles';
 import pic2 from '../assets/logo.png';
 import Grid from "@material-ui/core/Grid";
-import {genericStyles, useBorderRadius, useBorderRadiuses, useFont, useMargin, useSize} from "../values/responsive";
+import {useBorderRadius, useBorderRadiuses, useFont, useMargin, useSize} from "../values/web";
 import clsx from "clsx";
-import {strings} from "../values/strings";
+import {colors, genericStyles, strings} from "../values/values";
 import downArrow from "../assets/down arrow.png";
 
 const useStyle = makeStyles(theme => ({
@@ -15,26 +15,25 @@ const useStyle = makeStyles(theme => ({
     },
     loginButton: {
         border: '1px solid #CD1626',
-        color: '#CD1626',
-    },
-    signUpButton: {
-        backgroundColor: '#FF364A',
-        color: 'white',
     },
     container: {
         height: '100%',
     }
 }));
+
+const colorStyles = makeStyles(theme => colors);
+
 export default function WebHeader(props) {
     const classes = useStyle();
     const genericClasses = genericStyles();
+    const colorClasses = colorStyles();
     const {pageTest1} = strings;
 
     return (
         <Paper
             className={clsx([useMargin(0, 73), genericClasses.genericFullWidth, genericClasses.inlineFlex, genericClasses.centerAlignItems, useSize(undefined, 169), useBorderRadiuses('0', '0', 50, 50), classes.root])}
         >
-            <Container>
+            <Container maxWidth={false} className={clsx([useMargin(0, 0, 146, 146), genericClasses.genericFullWidth])}>
                 <Grid container wrap='nowrap' alignItems='center'
                       justify='space-between'> {/* whole WebHeader wrapper */}
                     <Grid item className={genericClasses.inlineFlex}>
@@ -83,14 +82,14 @@ export default function WebHeader(props) {
                         <Grid item>
                             <Button
                                 variant="outlined"
-                                className={clsx([classes.loginButton, useMargin(undefined, undefined, 162, 46), useSize(164, 72), useBorderRadius(36), useFont(24, 'medium')])}
+                                className={clsx([colorClasses.fontDarkMainColor, classes.loginButton, useMargin(undefined, undefined, 162, 46), useSize(164, 72), useBorderRadius(36), useFont(24, 'medium')])}
                             >
                                 {pageTest1.login}
                             </Button>
                         </Grid>
                         <Grid item>
                             <Button variant='contained'
-                                    className={clsx([classes.signUpButton, useSize(164, 72), useBorderRadius(36), useFont(24, 'medium')])}>
+                                    className={clsx([colorClasses.fontWhiteColor, colorClasses.backgroundMainColor, useSize(164, 72), useBorderRadius(36), useFont(24, 'medium')])}>
                                 {pageTest1.signUp}
                             </Button>
                         </Grid>

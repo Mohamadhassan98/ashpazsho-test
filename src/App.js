@@ -3,18 +3,18 @@ import {makeStyles} from "@material-ui/styles";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import {strings} from "./values/strings";
+import {genericStyles, strings} from "./values/values";
 import {TextField} from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import searchIcon from './assets/magnifying-glass.png';
-import {genericStyles, useBorderRadius, useFont, useMargin, useMinWidth, useSize, useWidth} from "./values/responsive";
+import {useBorderRadius, useFont, useMargin, useMinWidth, useSize, useWidth} from "./values/web";
 import Hidden from "@material-ui/core/Hidden";
 import Divider from "@material-ui/core/Divider";
 import clsx from "clsx";
 import Chip from "@material-ui/core/Chip";
-import recipe1 from './assets/Mask Group 74.png';
-import recipe2 from './assets/Mask Group 76.png';
-import recipe3 from './assets/Mask Group 75.png';
+import recipe1 from './assets/food1.png';
+import recipe2 from './assets/food2.png';
+import recipe3 from './assets/food3.png';
 import card1 from './assets/Recipe1.png';
 import card2 from './assets/Recipe2.png';
 import card3 from './assets/Recipe3.png';
@@ -91,7 +91,7 @@ export default function App() {
     return (
         <div className={genericClasses.genericFullWidth}>
             <Header/>
-            <Container className={genericClasses.genericAutoWidth}>
+            <Container className={clsx([useMargin(0, 0, 146, 146), genericClasses.genericAutoWidth])} maxWidth={false}>
                 <Grid container direction='column' spacing={4}> {/* Whole page wrapper */}
                     <Grid item container direction='row' justify='space-between' alignItems='center'>
                         <Grid item>
@@ -99,7 +99,7 @@ export default function App() {
                                 {pageTest1.learningCourse}
                             </Typography>
                         </Grid>
-                        <Hidden smDown>
+                        <Hidden only='xs'>
                             <Grid item>
                                 <TextField
                                     classes={textFieldClasses}
@@ -212,7 +212,7 @@ export default function App() {
                     <Grid item>
                         <CourseDetailsCard/>
                     </Grid>
-                    <Grid item>
+                    <Grid className={useMargin(131)}>
                         <Chip
                             label={pageTest1.recommendedCourses}
                             className={clsx([classes.recommendedCoursesChip, useSize(503, 94), useBorderRadius(47), useFont(30, 'medium')])}

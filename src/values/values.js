@@ -1,3 +1,5 @@
+import makeStyles from "@material-ui/core/styles/makeStyles";
+
 export const zwnj = '‌';
 export const strings = {
     pageTest1: {
@@ -36,8 +38,65 @@ export const strings = {
         packages: `پکیج${zwnj}ها`,
         foodCategories: `دسته${zwnj}بندی غذایی`,
         recommendationsAndOffers: `پیشنهادها و تخفیف${zwnj}ها`,
-        exit: 'خروج'
+        exit: 'خروج',
+        foodCategory1: 'غذای سنتی'
     }
 };
 
 export const appName = 'آشپز شو، قناد شو';
+
+export const genericStyles = makeStyles(theme => ({
+    genericFullWidth: {
+        width: '100%'
+    },
+    ltr: {
+        flip: false,
+        textAlign: 'left',
+        direction: 'ltr',
+    },
+    inlineFlex: {
+        display: 'inline-flex'
+    },
+    centerJustifyContent: {
+        justifyContent: 'center'
+    },
+    genericAutoWidth: {
+        width: 'auto'
+    },
+    centerAlignItems: {
+        alignItems: 'center'
+    },
+    flexEndJustifyContent: {
+        justifyContent: 'flex-end'
+    }
+}));
+
+export const colors = {
+    backgroundMainColor: {
+        background: '#FF364A'
+    },
+    fontMainColor: {
+        color: '#FF364A'
+    },
+    fontGreenColor: {
+        color: '#03B40F'
+    },
+    fontWhiteColor: {
+        color: '#FFFFFF'
+    },
+    backgroundGreenColor: {
+        background: '#03B40F'
+    },
+    backgroundLightMainColor: {
+        background: '#FE5F6F',
+    },
+    fontDarkMainColor: {
+        color: '#CD1626',
+    },
+    fontGrayColor: {
+        color: '#8d8d8d'
+    },
+    backgroundGrayColor: {
+        background: '#EEEEEE'
+    }
+};
