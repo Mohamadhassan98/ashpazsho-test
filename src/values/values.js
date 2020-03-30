@@ -23,7 +23,10 @@ export const strings = {
         price1: '11,000 تومان',
         signUp: 'ثبت نام',
         login: 'ورود',
-        recommendedCourses: `دوره${zwnj}های پیشنهادی حضوری و آنلاین`,
+        recommendedCourses: {
+            mobile: `دوره${zwnj}های پیشنهادی`,
+            web: `دوره${zwnj}های پیشنهادی حضوری و آنلاین`
+        },
         online: 'آنلاین',
         presentment: 'حضوری',
         priceUnit: 'تومان',
@@ -39,11 +42,26 @@ export const strings = {
         foodCategories: `دسته${zwnj}بندی غذایی`,
         recommendationsAndOffers: `پیشنهادها و تخفیف${zwnj}ها`,
         exit: 'خروج',
-        foodCategory1: 'غذای سنتی'
+        foodCategory1: 'غذای سنتی',
+        teacherHonors: [
+            'مدیریت مجموعه آشپزشو، قناد شو',
+            'کارشناس صدا و سیما',
+            `سرآشپز بین${zwnj}المللی`,
+            `مدرس رسمی سازمان فنی و حرفه${zwnj}ای`
+        ],
+        footer: {
+            address: 'آدرس',
+            phoneNumber: 'شماره تماس',
+            phoneNumber1: '02166715466',
+            socialMedia: `لینک شبکه${zwnj}های اجتماعی`,
+            telegram: `نکات و ترفندهای آموزش + تخفیف${zwnj}های ویژه`,
+            instagram: `آموزش، کلیپ${zwnj}ها و ترفندهای یک دقیقه${zwnj}ای آموزشی`
+        }
     }
 };
 
 export const appName = 'آشپز شو، قناد شو';
+export const appNameShort = 'آشپز شو';
 
 export const genericStyles = makeStyles(theme => ({
     genericFullWidth: {

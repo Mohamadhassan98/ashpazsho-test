@@ -3,16 +3,16 @@ import {makeStyles} from "@material-ui/styles";
 import Card from "@material-ui/core/Card";
 import CardMedia from "@material-ui/core/CardMedia";
 import PropTypes from 'prop-types';
-import {colors, genericStyles, strings} from "./values/values";
+import {colors, genericStyles, strings} from "../../values/values";
 import CardContent from "@material-ui/core/CardContent";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Chip from "@material-ui/core/Chip";
 import Divider from "@material-ui/core/Divider";
-import clock from './assets/clock.png';
-import {useBorderRadius, useFont, useMargin, useMinWidth, useSize} from "./values/web";
+import clock from '../../assets/clock.png';
+import {useBorderRadius, useFont, useMargin, useMinWidth, useSize} from "../../values/web";
 import clsx from "clsx";
-import SignUpButton from "./SignUpButton";
+import SignUpButton from "../../SignUpButton";
 
 const useStyles = makeStyles(theme => ({
     fontGreenColor2: {
@@ -25,7 +25,7 @@ const useStyles = makeStyles(theme => ({
 
 const colorStyles = makeStyles(theme => colors);
 
-export default function CourseCard(props) {
+export default function WebCourseCard(props) {
 
     const {recipeImage, date, duration, price, teacher, title, type} = props;
     const classes = useStyles();
@@ -34,7 +34,7 @@ export default function CourseCard(props) {
     const {pageTest1} = strings;
 
     return (
-        <Card className={clsx([classes.card, useBorderRadius(20), useMargin(24, 24, 24, 24)])}>
+        <Card className={clsx([classes.card, useMinWidth(384), useBorderRadius(20), useMargin(24, 24, 24, 24)])}>
             <CardMedia
                 className={clsx([useSize(undefined, 267), useBorderRadius(20), useMinWidth(384)])}
                 image={recipeImage}
@@ -42,9 +42,9 @@ export default function CourseCard(props) {
             />
             <CardContent>
                 <Grid container direction='column' alignItems='center' spacing='3'> {/* whole card wrapper */}
-                    <Grid container item justify='space-between' alignItems='center'> {/* first row */}
+                    <Grid container item justify='space-between' alignItems='center' wrap='nowrap'> {/* first row */}
                         <Grid item>
-                            <Typography className={useFont(22, 'medium')}>
+                            <Typography className={useFont(22, 'medium')} noWrap>
                                 {title}
                             </Typography>
                         </Grid>
@@ -115,7 +115,7 @@ export default function CourseCard(props) {
     );
 }
 
-CourseCard.propTypes = {
+WebCourseCard.propTypes = {
     recipeImage: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     type: PropTypes.oneOf(['online', 'presentment']).isRequired,
@@ -125,7 +125,7 @@ CourseCard.propTypes = {
     teacher: PropTypes.string
 };
 
-CourseCard.defaultProps = {
+WebCourseCard.defaultProps = {
     duration: '01:45',
     price: 45000,
     date: '3 بهمن 1398',

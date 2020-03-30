@@ -1,13 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {createMuiTheme, CssBaseline} from "@material-ui/core";
 import {ThemeProvider} from "@material-ui/styles";
 import RTL from "./RTL";
-import {strings} from "./values/values";
-import HiddenScroll from "./hiddenScroll";
+import App from "./App";
 
 function Index() {
     const theme = createMuiTheme({
@@ -35,20 +33,21 @@ function Index() {
                 root: {
                     textAlign: undefined
                 }
+            },
+            MuiChip: {
+                label: {
+                    paddingRight: "unset",
+                    paddingLeft: "unset"
+                }
             }
         }
     });
-
-    const {pageTest1} = strings;
 
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline>
                 <RTL>
-                    {/*<FoodCard background={food1} foodCategory={pageTest1.foodCategory1} foodTitle={pageTest1.recipe1}/>*/}
-                    <HiddenScroll vertical horizontal>
-                        <App/>
-                    </HiddenScroll>
+                    <App/>
                 </RTL>
             </CssBaseline>
         </ThemeProvider>

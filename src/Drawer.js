@@ -41,7 +41,7 @@ export default function MobileDrawer(props) {
                         </Grid>
                     </Container>
                 </ListItem>
-                <Divider/>
+                <Divider variant='middle'/>
                 <ListItem button className={genericClasses.flexEndJustifyContent}>
                     <Typography className={useFont(14, 'medium')}>
                         {pageTest1.signInUp}
@@ -65,15 +65,19 @@ export default function MobileDrawer(props) {
                 <Collapse in={coursesOpen} timeout="auto" unmountOnExit addEndListener={() => {
                 }}>
                     <List component="div" disablePadding>
-                        <ListItem button
-                                  className={clsx([colorClasses.backgroundGrayColor, genericClasses.flexEndJustifyContent, usePadding(0, 0, 19)])}>
+                        <ListItem
+                            button
+                            className={clsx([useSize(undefined, 20), colorClasses.backgroundGrayColor, genericClasses.flexEndJustifyContent, usePadding(0, 0, 19)])}
+                        >
                             <Typography className={useFont(14)}>
                                 {pageTest1.presentment}
                             </Typography>
                         </ListItem>
                         <Divider/>
-                        <ListItem button
-                                  className={clsx([colorClasses.backgroundGrayColor, genericClasses.flexEndJustifyContent, usePadding(0, 0, 19)])}>
+                        <ListItem
+                            button
+                            className={clsx([useSize(undefined, 20), colorClasses.backgroundGrayColor, genericClasses.flexEndJustifyContent, usePadding(0, 0, 19)])}
+                        >
                             <Typography className={useFont(14)}>
                                 {pageTest1.online}
                             </Typography>
@@ -98,14 +102,14 @@ export default function MobileDrawer(props) {
                             className={clsx([colorClasses.backgroundGrayColor, genericClasses.flexEndJustifyContent, usePadding(0, 0, 19)])}
                         >
                             <Typography className={useFont(14)}>
-                                {pageTest1.presentment}
+                                {pageTest1.packages}
                             </Typography>
                         </ListItem>
                         <Divider/>
                         <ListItem button
                                   className={clsx([colorClasses.backgroundGrayColor, genericClasses.flexEndJustifyContent, usePadding(0, 0, 19)])}>
                             <Typography className={useFont(14)}>
-                                {pageTest1.online}
+                                {pageTest1.foodCategories}
                             </Typography>
                         </ListItem>
                     </List>
@@ -126,7 +130,7 @@ export default function MobileDrawer(props) {
                     </Typography>
                 </ListItem>
                 <ListItem button className={genericClasses.flexEndJustifyContent}>
-                    <Typography className={clsx([genericClasses.fontMainColor, useFont(14, 'medium')])}>
+                    <Typography className={clsx([colorClasses.fontMainColor, useFont(14, 'medium')])}>
                         {pageTest1.exit}
                     </Typography>
                 </ListItem>

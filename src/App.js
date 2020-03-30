@@ -3,42 +3,43 @@ import {makeStyles} from "@material-ui/styles";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import {genericStyles, strings} from "./values/values";
-import {TextField} from "@material-ui/core";
+import {appNameShort, colors, genericStyles, strings} from "./values/values";
+import {TextField, useMediaQuery} from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import searchIcon from './assets/magnifying-glass.png';
-import {useBorderRadius, useFont, useMargin, useMinWidth, useSize, useWidth} from "./values/web";
+import {useBorderRadius, useFont, useMargin, useSize, useWidth} from "./values/web";
+import * as mobile from './values/mobile';
 import Hidden from "@material-ui/core/Hidden";
-import Divider from "@material-ui/core/Divider";
 import clsx from "clsx";
 import Chip from "@material-ui/core/Chip";
-import recipe1 from './assets/food1.png';
-import recipe2 from './assets/food2.png';
-import recipe3 from './assets/food3.png';
-import card1 from './assets/Recipe1.png';
-import card2 from './assets/Recipe2.png';
-import card3 from './assets/Recipe3.png';
-import CourseDetailsCard from "./CourseDetailsCard";
-import CourseCard from "./CourseCard";
 import Header from "./headers/Header";
+import AboutCourse from "./about-course/AboutCourse";
+import Courses from "./courses/Courses";
+import Footer from "./Footer/Footer";
 
 const useStyles = makeStyles(theme => ({
-    backgroundMainColor: {
-        background: '#FF364A'
-    },
-    fontMainColor: {
-        color: '#FF364A'
-    },
-    divider: {
-        height: 1,
-    },
-    recipeChip: {
-        borderColor: '#03B40F',
-    },
     recommendedCoursesChip: {
         backgroundColor: '#FFDD00'
+    },
+    mobileRecommended: {},
+    webRecommended: {
+        marginBottom: useWidth(60, 'lg')
+    },
+    mobileTitle: {
+        marginBottom: 18
+    },
+    webTitle: {
+        marginBottom: useWidth(69, 'lg')
+    },
+    mobileContent: {
+        marginBottom: 34
+    },
+    webContent: {
+        marginBottom: useWidth(83, 'lg')
     }
 }));
+
+const colorStyles = makeStyles(theme => colors);
 
 const textFieldStyle = makeStyles(theme => ({
     root: {
@@ -83,23 +84,37 @@ export default function App() {
 
     const classes = useStyles();
     const genericClasses = genericStyles();
+    const colorClasses = colorStyles();
     const textFieldClasses = textFieldStyle();
+    const isMobile = useMediaQuery(theme => theme.breakpoints.down('sm'));
 
     const {pageTest1} = strings;
+    const mobileStyle = mobile.useMargin(0, 0, 16, 16);
+    const webStyle = useMargin(0, 0, 146, 146);
+    React.useEffect(() => {
+        document.title = appNameShort
+    }, []);
 
     // noinspection DuplicatedCode
     return (
         <div className={genericClasses.genericFullWidth}>
             <Header/>
-            <Container className={clsx([useMargin(0, 0, 146, 146), genericClasses.genericAutoWidth])} maxWidth={false}>
-                <Grid container direction='column' spacing={4}> {/* Whole page wrapper */}
-                    <Grid item container direction='row' justify='space-between' alignItems='center'>
+            <Container className={clsx([isMobile ? mobileStyle : webStyle, genericClasses.genericAutoWidth])}
+                       maxWidth={false}>
+                <Grid container direction='column' wrap='nowrap'> {/* Whole page wrapper */}
+                    <Grid
+                        item
+                        container
+                        justify='space-between'
+                        alignItems='center'
+                        className={isMobile ? classes.mobileTitle : classes.webTitle}
+                    >
                         <Grid item>
                             <Typography className={useFont(28, 'medium')}>
                                 {pageTest1.learningCourse}
                             </Typography>
                         </Grid>
-                        <Hidden only='xs'>
+                        <Hidden only={['xs', 'sm']}>
                             <Grid item>
                                 <TextField
                                     classes={textFieldClasses}
@@ -108,7 +123,7 @@ export default function App() {
                                     InputProps={{
                                         endAdornment: (
                                             <Button
-                                                className={clsx([useSize(66, 60), useBorderRadius(17), classes.backgroundMainColor])}
+                                                className={clsx([useSize(66, 60), useBorderRadius(17), colorClasses.backgroundMainColor])}
                                             >
                                                 <img src={searchIcon} alt='search-icon' className={useSize(28, 28)}/>
                                             </Button>
@@ -118,122 +133,34 @@ export default function App() {
                             </Grid>
                         </Hidden>
                     </Grid>
-                    <Grid item container>
+                    <Grid item container className={isMobile ? classes.mobileContent : classes.webContent}>
                         <Typography className={useFont(22, undefined, true)}>
                             {pageTest1.loremIpsum}
                         </Typography>
                     </Grid>
-                    <Grid item container alignItems='center' wrap='nowrap'>
-                        <Grid item className={useMargin(0, 0, 0, 24)}>
-                            <Typography
-                                className={clsx([useFont(28, 'medium'), classes.fontMainColor])} noWrap>
-                                {pageTest1.aboutCourse}
-                            </Typography>
-                        </Grid>
-                        <Grid item className={genericClasses.genericFullWidth}>
-                            <Divider
-                                className={clsx([classes.divider, classes.backgroundMainColor])}
-                                variant='fullWidth'
+                    <Grid item>
+                        <AboutCourse/>
+                    </Grid>
+                    <Grid item>
+                        <Hidden only={["xl", "lg", "md"]}>
+                            <Chip
+                                label={pageTest1.recommendedCourses.mobile}
+                                className={clsx([mobile.useMargin(undefined, 18), classes.recommendedCoursesChip, mobile.useSize(135, 36), mobile.useBorderRadius(22), mobile.useFont(12, 'medium')])}
                             />
-                        </Grid>
+                        </Hidden>
+                        <Hidden only={["xs", "sm"]}>
+                            <Chip
+                                label={pageTest1.recommendedCourses.web}
+                                className={clsx([classes.webRecommended, classes.recommendedCoursesChip, useSize(503, 94), useBorderRadius(47), useFont(30, 'medium')])}
+                            />
+                        </Hidden>
                     </Grid>
                     <Grid item>
-                        <Typography className={useFont(24, 'medium')}>
-                            {pageTest1.learnThreeRecipes}
-                        </Typography>
-                    </Grid>
-                    <Grid item container justify='space-between' wrap='nowrap'> {/* Whole images and chips */}
-                        <Grid item container direction='column' spacing={3}> {/* chips */}
-                            <Grid item container spacing={3}> {/* two upper chips */}
-                                <Grid item>
-                                    <Chip
-                                        label={pageTest1.recipe1}
-                                        className={clsx([classes.recipeChip, useSize(undefined, 65), useMinWidth(185), useBorderRadius(41), useFont(24)])}
-                                        variant='outlined'
-                                        onClick={() => {
-                                        }}
-                                    />
-                                </Grid>
-                                <Grid item>
-                                    <Chip
-                                        label={pageTest1.recipe2}
-                                        className={clsx([classes.recipeChip, useSize(undefined, 65), useMinWidth(185), useBorderRadius(41), useFont(24)])}
-                                        variant='outlined'
-                                        onClick={() => {
-                                        }}
-                                    />
-                                </Grid>
-                            </Grid>
-                            <Grid item container spacing={3}> {/* two lower chips */}
-                                <Grid item>
-                                    <Chip
-                                        label={pageTest1.recipe3}
-                                        className={clsx([classes.recipeChip, useSize(undefined, 65), useMinWidth(185), useBorderRadius(41), useFont(24)])}
-                                        variant='outlined'
-                                        onClick={() => {
-                                        }}
-                                    />
-                                </Grid>
-                                <Grid item>
-                                    <Chip
-                                        label={pageTest1.recipe3}
-                                        className={clsx([classes.recipeChip, useSize(undefined, 65), useMinWidth(185), useBorderRadius(41), useFont(24)])}
-                                        variant='outlined'
-                                        onClick={() => {
-                                        }}
-                                    />
-                                </Grid>
-                            </Grid>
-                        </Grid>
-                        <Grid item container spacing={3} wrap='nowrap' justify='flex-end'> {/* images */}
-                            <Grid item>
-                                <img
-                                    src={recipe1}
-                                    alt='recipe1'
-                                    className={clsx([useSize(294, 246), useBorderRadius(20)])}
-                                />
-                            </Grid>
-                            <Grid item>
-                                <img
-                                    src={recipe2}
-                                    alt='recipe1'
-                                    className={clsx([useSize(294, 246), useBorderRadius(20)])}
-                                />
-                            </Grid>
-                            <Grid item>
-                                <img
-                                    src={recipe3}
-                                    alt='recipe1'
-                                    className={clsx([useSize(294, 246), useBorderRadius(20)])}
-                                />
-                            </Grid>
-                        </Grid>
-                    </Grid>
-                    <Grid item>
-                        <CourseDetailsCard/>
-                    </Grid>
-                    <Grid className={useMargin(131)}>
-                        <Chip
-                            label={pageTest1.recommendedCourses}
-                            className={clsx([classes.recommendedCoursesChip, useSize(503, 94), useBorderRadius(47), useFont(30, 'medium')])}
-                        />
-                    </Grid>
-                    <Grid item container justify='center'>
-                        <Grid item lg={3} md={4}>
-                            <CourseCard type='presentment' recipeImage={card1} title={pageTest1.course1}/>
-                        </Grid>
-                        <Grid item lg={3} md={4}>
-                            <CourseCard type='online' recipeImage={card2} title={pageTest1.course2}/>
-                        </Grid>
-                        <Grid item lg={3} md={4}>
-                            <CourseCard type='online' recipeImage={card3} title={pageTest1.course1}/>
-                        </Grid>
-                        <Grid item lg={3} md={4}>
-                            <CourseCard type='online' recipeImage={card1} title={pageTest1.course1}/>
-                        </Grid>
+                        <Courses/>
                     </Grid>
                 </Grid>
             </Container>
+            <Footer/>
         </div>
     );
 }

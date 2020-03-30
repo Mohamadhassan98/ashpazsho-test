@@ -5,7 +5,7 @@ import {genericStyles} from "../values/values";
 import {Container, Paper} from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
-import {useBorderRadius, useSize} from "../values/mobile";
+import {useBorderRadius, useBorderRadiuses, useMargin, useSize} from "../values/mobile";
 import MenuIcon from '@material-ui/icons/Menu';
 import logo from '../assets/logo.png';
 import user from '../assets/user.png';
@@ -14,6 +14,9 @@ import PropTypes from 'prop-types';
 const useStyles = makeStyles(theme => ({
     userLogo: {
         background: 'rgba(255, 54, 74, 0.15)'
+    },
+    paper: {
+        boxShadow: '0px 3px 6px #EEEEEE'
     }
 }));
 
@@ -22,7 +25,7 @@ export default function MobileHeader(props) {
     const classes = useStyles();
     return (
         <Paper
-            className={clsx([genericClasses.genericFullWidth, genericClasses.inlineFlex, genericClasses.centerAlignItems, useSize(undefined, 56)])}
+            className={clsx([classes.paper, genericClasses.genericFullWidth, genericClasses.inlineFlex, genericClasses.centerAlignItems, useSize(undefined, 56), useMargin(0, 28), useBorderRadiuses(0, 0, 10, 10)])}
         >
             <Container>
                 <Grid container justify='space-between' alignItems='center'>
@@ -31,7 +34,7 @@ export default function MobileHeader(props) {
                             <MenuIcon className={useSize(24, 24)}/>
                         </Button>
                     </Grid>
-                    <Grid item>
+                    <Grid item className={genericClasses.inlineFlex}>
                         <img src={logo} className={useSize(59, 21)} alt='logo'/>
                     </Grid>
                     <Grid item

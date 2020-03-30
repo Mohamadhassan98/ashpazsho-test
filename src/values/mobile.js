@@ -12,7 +12,7 @@ export function useFont(size, weight = undefined, justify = false) {
             fontWeight = 'bold';
             break;
         default:
-            fontWeight = undefined;
+            fontWeight = 'normal';
             break;
     }
     const useStyles = makeStyles(theme => ({

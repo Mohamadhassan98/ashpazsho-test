@@ -4,15 +4,15 @@ import Grid from "@material-ui/core/Grid";
 import {Paper} from "@material-ui/core";
 import Divider from "@material-ui/core/Divider";
 import Typography from "@material-ui/core/Typography";
-import {colors, genericStyles, strings} from './values/values';
+import {colors, genericStyles, strings} from '../../values/values';
 import Rating from '@material-ui/lab/Rating';
-import chef from './assets/chef.png';
-import calendar from './assets/calendar.png';
-import license from './assets/license.png';
-import teacher from './assets/Teacher.png';
+import chef from '../../assets/chef.png';
+import calendar from '../../assets/calendar.png';
+import license from '../../assets/license.png';
+import teacher from '../../assets/Teacher.png';
 import clsx from "clsx";
-import {useBorderRadius, useFont, usePadding, useSize, useWidth} from "./values/web";
-import SignUpButton from "./SignUpButton";
+import {useBorderRadius, useFont, usePadding, useSize, useWidth} from "../../values/web";
+import SignUpButton from "../../SignUpButton";
 
 const useStyles = makeStyles(theme => ({
     divider: {
@@ -49,6 +49,30 @@ const useStyles = makeStyles(theme => ({
             marginInlineEnd: '80px',
         },
     },
+    honorBullet: {
+        width: 9,
+        height: 9,
+        borderRadius: 4.5,
+        background: '#FF364A',
+        marginRight: 9
+    },
+    honor: {
+        fontSize: useWidth(20, 'md'),
+        [theme.breakpoints.up('lg')]: {
+            fontSize: useWidth(20, 'lg'),
+        },
+        [theme.breakpoints.up('xl')]: {
+            fontSize: useWidth(20, 'xl'),
+        },
+    },
+    innerCard: {
+        border: 'rgba(141, 141, 141, 0.57) solid 1px'
+    },
+    outerCard: {
+        marginTop: 2.5,
+        marginBottom: 2.5,
+        marginLeft: 12
+    }
 }));
 
 const colorStyles = makeStyles(theme => colors);
@@ -197,10 +221,20 @@ export default function () {
                             <img src={teacher} className={useSize(95, 95)} alt='teacher'/>
                         </Grid>
                     </Grid>
-                    <Grid item>
-                        <Typography className={useFont(20, undefined, true)}>
-                            {pageTest1.miniLoremIpsum}
-                        </Typography>
+                    <Grid item container justify='center'>
+                        {pageTest1.teacherHonors.map((item, index) => (
+                            <Grid item container key={index} alignItems='baseline' alignContent='center'
+                                  className={classes.outerCard}>
+                                <Grid item>
+                                    <div className={classes.honorBullet}/>
+                                </Grid>
+                                <Grid item>
+                                    <Typography className={classes.honor}>
+                                        {item}
+                                    </Typography>
+                                </Grid>
+                            </Grid>
+                        ))}
                     </Grid>
                 </Grid>
             </Grid>

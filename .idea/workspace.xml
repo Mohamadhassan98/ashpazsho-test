@@ -2,9 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15520e86-8326-472c-a04d-e614522b39fe" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Footer/Footer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Footer/ResponsiveFooter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Footer/WebFooter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/about-course/AboutCourse.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/about-course/web/WebCourseDetails.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/call.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/contained-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/enamad.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/fnamad.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/instagram.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/mobileFooter.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/pin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/telegram.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/webFooter.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/courses/Courses.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/courses/mobile/MobileCourseCard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/about-course/MobileCourseDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/about-course/MobileCourseDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CourseCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/courses/web/WebCourseCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CourseDetailsCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/about-course/web/CourseDetailsCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Drawer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Drawer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/about-course/FoodCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/about-course/mobile/FoodCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/about-course/MobileCourseDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/about-course/mobile/MobileCourseDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/headers/MobileHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/headers/MobileHeader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/setupTests.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/values/mobile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/values/mobile.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/values/values.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/values/values.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,19 +80,32 @@
     <property name="ts.external.directory.path" value="D:\Program Files\JetBrains\WebStorm 2019.1.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Mohamadhassan\WebstormProjects\ashpazsho-test1\src\courses\web" />
+      <recent name="C:\Users\Mohamadhassan\WebstormProjects\ashpazsho-test1\src\courses\mobile" />
+      <recent name="C:\Users\Mohamadhassan\WebstormProjects\ashpazsho-test1\src\about-course\mobile" />
+      <recent name="C:\Users\Mohamadhassan\WebstormProjects\ashpazsho-test1\src\about-course\web" />
+      <recent name="C:\Users\Mohamadhassan\WebstormProjects\ashpazsho-test1\src\headers" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Mohamadhassan\WebstormProjects\ashpazsho-test1\src\assets" />
       <recent name="C:\Users\Mohamadhassan\WebstormProjects\ashpazsho-test1\src" />
       <recent name="C:\Users\Mohamadhassan\WebstormProjects\ramstyle-last\src\assets" />
       <recent name="C:\Users\Mohamadhassan\WebstormProjects\ashpazsho-test1\fonts" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Mohamadhassan\WebstormProjects\ashpazsho-test1\src\headers" />
-      <recent name="C:\Users\Mohamadhassan\WebstormProjects\ashpazsho-test1\src" />
-    </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
+      <method v="2" />
+    </configuration>
+    <configuration name="deploy" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="deploy" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
       <method v="2" />
     </configuration>
     <configuration name="npm start" type="js.build_tools.npm">
@@ -73,6 +118,11 @@
       <envs />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.deploy" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -89,7 +139,8 @@
       <workItem from="1585164194756" duration="1725000" />
       <workItem from="1585166063482" duration="7000" />
       <workItem from="1585166116796" duration="45020000" />
-      <workItem from="1585304622453" duration="70680000" />
+      <workItem from="1585304622453" duration="88228000" />
+      <workItem from="1585510146416" duration="25412000" />
     </task>
     <task id="LOCAL‎۰۰۰۰۱" summary="First commit">
       <created>1585144936400</created>
@@ -127,7 +178,13 @@
       <option name="presentableId" value="LOCAL‎۰۰۰۰۶" />
       <updated>1585477150700</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL‎۰۰۰۰۷" summary="Mobile Header fixed.">
+      <created>1585487384343</created>
+      <option name="number" value="LOCAL‎۰۰۰۰۷" />
+      <option name="presentableId" value="LOCAL‎۰۰۰۰۷" />
+      <updated>1585487384343</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,7 +198,8 @@
     <MESSAGE value="Responsive updated!" />
     <MESSAGE value="Header added." />
     <MESSAGE value="Responsive files updated." />
-    <option name="LAST_COMMIT_MESSAGE" value="Responsive files updated." />
+    <MESSAGE value="Mobile Header fixed." />
+    <option name="LAST_COMMIT_MESSAGE" value="Mobile Header fixed." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -155,30 +213,34 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="449" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1585163991424" />
-    <state x="391" y="0" key="CommitChangelistDialog2" timestamp="1585477148306">
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585535091565">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="391" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585477148306" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1585535091565" />
+    <state x="391" y="0" key="CommitChangelistDialog2" timestamp="1585487383039">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="391" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585487383039" />
     <state x="632" y="306" key="Github.ShareDialog" timestamp="1585124935109">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="632" y="306" key="Github.ShareDialog/0.0.1536.824@0.0.1536.824" timestamp="1585124935109" />
-    <state width="1515" height="190" key="GridCell.Tab.0.bottom" timestamp="1585435109129">
+    <state width="1515" height="190" key="GridCell.Tab.0.bottom" timestamp="1585511071783">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="190" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585435109129" />
-    <state width="1515" height="190" key="GridCell.Tab.0.center" timestamp="1585435109129">
+    <state width="1515" height="190" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585511071783" />
+    <state width="1515" height="190" key="GridCell.Tab.0.center" timestamp="1585511071783">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="190" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1585435109129" />
-    <state width="1515" height="190" key="GridCell.Tab.0.left" timestamp="1585435109128">
+    <state width="1515" height="190" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1585511071783" />
+    <state width="1515" height="190" key="GridCell.Tab.0.left" timestamp="1585511071783">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="190" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1585435109128" />
-    <state width="1515" height="190" key="GridCell.Tab.0.right" timestamp="1585435109129">
+    <state width="1515" height="190" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1585511071783" />
+    <state width="1515" height="190" key="GridCell.Tab.0.right" timestamp="1585511071783">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="190" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585435109129" />
+    <state width="1515" height="190" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585511071783" />
     <state x="565" y="38" key="RollbackChangesDialog" timestamp="1585434359091">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -187,14 +249,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="54" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1585230341106" />
-    <state x="361" y="141" key="Vcs.Push.Dialog.v2" timestamp="1585477186996">
+    <state x="361" y="141" key="Vcs.Push.Dialog.v2" timestamp="1585487402918">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="141" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1585477186996" />
-    <state x="453" y="128" width="759" height="638" key="find.popup" timestamp="1585436950165">
+    <state x="361" y="141" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1585487402918" />
+    <state x="453" y="128" width="759" height="638" key="find.popup" timestamp="1585527435127">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="453" y="128" width="759" height="638" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1585436950165" />
+    <state x="453" y="128" width="759" height="638" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1585527435127" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1585485700413">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
